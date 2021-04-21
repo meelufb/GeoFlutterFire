@@ -11,12 +11,12 @@ class GeoFirePoint {
 
   /// return geographical distance between two Co-ordinates
   static double distanceBetween(
-      {@required Coordinates to, @required Coordinates from}) {
+      {required Coordinates to, required Coordinates from}) {
     return Util.distance(to, from);
   }
 
   /// return neighboring geo-hashes of [hash]
-  static List<String> neighborsOf({@required String hash}) {
+  static List<String> neighborsOf({required String hash}) {
     return _util.neighbors(hash);
   }
 
@@ -40,7 +40,7 @@ class GeoFirePoint {
   }
 
   /// return distance between [GeoFirePoint] and ([lat], [lng])
-  double distance({@required double lat, @required double lng}) {
+  double distance({required double lat, required double lng}) {
     return distanceBetween(from: coords, to: Coordinates(lat, lng));
   }
 
@@ -49,7 +49,7 @@ class GeoFirePoint {
   }
 
   /// haversine distance between [GeoFirePoint] and ([lat], [lng])
-  haversineDistance({@required double lat, @required double lng}) {
+  haversineDistance({required double lat, required double lng}) {
     return GeoFirePoint.distanceBetween(
         from: coords, to: Coordinates(lat, lng));
   }
